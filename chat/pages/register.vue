@@ -114,9 +114,6 @@
 </script>
 
 <style scoped>
-.dandger{
-  border-top: solid 2px orangered;
-}
 .register_title {
   width: 100%;
   height: 10%;
