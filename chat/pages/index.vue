@@ -1,73 +1,56 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        chat
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="main">
+    <ModalBase v-if="isCreateMode" @closeModal="closeModal" class="modal">
+      <CreateRoomModal @closeModal="closeModal" />
+    </ModalBase>
+    <el-button @click="openModal" type="primary">ルーム作成</el-button>
   </div>
 </template>
 
 <script>
-export default {}
+import ModalBase from '~/components/ModalBase.vue'
+import CreateRoomModal from '~/components/CreateRoomModal.vue'
+
+export default {
+  components: {
+    ModalBase,
+    CreateRoomModal
+  },
+  data() {
+    return {
+      isCreateMode: false
+    }
+  },
+  methods: {
+    openModal() {
+      this.isCreateMode = true
+    },
+    closeModal() {
+      this.isCreateMode = false
+    }
+  }
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style scoped>
+.main {
+  width: 100vw;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.el-button {
+  margin-right: 80px;
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+/* .modal {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+} */
 </style>

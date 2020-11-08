@@ -1,8 +1,6 @@
 <template>
   <el-card v-show="message">
-    <div>
-      <span>エラー</span>
-    </div>
+    <p>エラー</p>
     <el-button class="el-icon-close" @click="deleteMessage()"></el-button>
     <p>{{ message }}</p>
   </el-card>
@@ -21,3 +19,6 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+</style>
