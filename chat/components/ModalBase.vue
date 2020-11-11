@@ -30,7 +30,7 @@ export default {
   margin-top: 30px;
 }
 
-.v-leave-active,
+/* .v-leave-active,
 .v-enter-active {
   transition: opacity 0.4s ease-out;
 }
@@ -43,5 +43,5 @@ export default {
 .v-enter-to,
 .vleave {
   opacity: 1;
-}
+} */
 </style>

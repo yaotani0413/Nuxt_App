@@ -10,7 +10,7 @@
 
 <style scoped>
 .el-container {
-  background-color: #333;
+  background-color: #1E90FF;
   height: 80px;
   width: 100%;
   position: fixed;

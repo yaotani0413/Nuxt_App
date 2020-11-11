@@ -50,7 +50,7 @@
         </span>
       </div>
       <div class="button_container">
-        <el-button type="primary" @click="onSubmit">作成</el-button>
+        <el-button @click="onSubmit">作成</el-button>
       </div>
     </form>
   </el-card>
@@ -224,5 +224,7 @@ export default {
   display: block;
   margin: 0 auto;
   margin-top: 40px;
+  background-color: #1E90FF;
+  color: #fff;
 }
 </style>

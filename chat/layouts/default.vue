@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style>
-
+html {
+  font-family: "San Francisco UI",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
 </style>
