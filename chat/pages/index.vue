@@ -1,7 +1,8 @@
 <template>
   <div class="main">
-    <div :class="{ none: isCreateMode }">
-      <el-card v-for="room in rooms" :key="room.id" class="room" shadow="hover">
+    <div v-for="room in rooms" :key="room.id" :class="{ none: isCreateMode }" @click="moveToRoomPage(room.id)">
+      <el-card  class="room" shadow="hover"
+      >
         <el-avatar :src="room.topImageUrl">
         </el-avatar>
         <p>{{ room.name }}</p>
@@ -34,6 +35,9 @@ export default {
   computed: {
     ...mapGetters('rooms', ['rooms'])
   },
+  created() {
+    console.log(this.room)
+  },
   async asyncData({ store }) {
     const unsubscribe = await store.dispatch('rooms/subscribe')
     return {
@@ -45,13 +49,16 @@ export default {
     if (this.unsubscribe) this.unsubscribe()
   },
   methods: {
+    moveToRoomPage(roomId) {
+        this.$router.push(`/rooms/${roomId}`)
+    },
     openModal() {
       this.isCreateMode = true
 
     },
     closeModal() {
       this.isCreateMode = false
-    }
+    },
   }
 }
 </script>
